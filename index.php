@@ -3,15 +3,15 @@
 <head>
 	<script type="text/javascript" src="ajax.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-  <script type="text/javascript" src="ajax.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  	<script type="text/javascript" src="ajax.js"></script>
 </head>
 <html>
 <body onload="list()">
 	<h1 class="display-1 m-3">Raktár</h1>
-	<button type="button" class="btn btn-primary ml-3" data-toggle="modal" data-target="#insertModal">Hozzáadás</button>
-	<div class="modal fade" id="insertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<button type="button" class="btn btn-primary ml-3 mb-3" data-toggle="modal" data-target="#insertModal">Hozzáadás</button>
+	<div class="modal fade" id="insertModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
   		<div class="modal-dialog" role="document">
     		<div class="modal-content">
       			<div class="modal-header">
@@ -45,7 +45,6 @@
 	</div>
 
 	<div id="muvelet"></div>
-	<button type="button" class="btn btn-secondary m-3" onclick="list()">Frissítés</button>
 	<div id="tartalom"></div>
 </body>
 </html>

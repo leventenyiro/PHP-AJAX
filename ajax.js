@@ -3,14 +3,14 @@ function insert() {
 	felvetel_url += "?input_nev=" + document.getElementById("input_nev").value;
 	felvetel_url += "&input_ar=" + document.getElementById("input_ar").value;
 	felvetel_url += "&input_keszleten=" + document.getElementById("input_keszleten").value;
-	/*document.getElementById("input_nev").value = "";
+	document.getElementById("input_nev").value = "";
 	document.getElementById("input_ar").value = "";
-	document.getElementById("input_keszleten").value = "Igen";*/
+	document.getElementById("input_keszleten").value = "Igen";
 	console.log(felvetel_url);
   	var xhttp = new XMLHttpRequest();
   	xhttp.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
-      		document.getElementById("muvelet").innerHTML =
+      		document.getElementById("tartalom").innerHTML =
       		this.responseText;
 	  		list();
     	}
@@ -23,7 +23,7 @@ function list() {
   	var xhttp = new XMLHttpRequest();
   	xhttp.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
-      		document.getElementById("tartalom").innerHTML =
+      		document.getElementById("muvelet").innerHTML =
       		this.responseText;
     	}
   	};
@@ -47,21 +47,6 @@ function torles(id) {
   	xhttp.send();
 }
 
-/*function adatok(id) {
-	adatok_url = ""
-	adatok_url += "?input_id=" + id;
-
-	var xhttp = new XMLHttpRequest();
-	xhttp.onreadystatechange = function() {
-	  if (this.readyState == 4 && this.status == 200) {
-			document.getElementById("tartalom").innerHTML =
-			this.responseText;
-	  }
-	};
-	xhttp.open("GET", "adatok.php" + upd_url, true);
-	xhttp.send();
-}*/
-
 function updateForm(id) {
 	updateForm_url = "";
 	updateForm_url += "?input_id=" + id;
@@ -69,9 +54,9 @@ function updateForm(id) {
 	var xhttp = new XMLHttpRequest();
   	xhttp.onreadystatechange = function() {
     	if (this.readyState == 4 && this.status == 200) {
-			/*$(document).ready(function(){
+			$(document).ready(function(){
 				$('#updateModal').modal('show');
-			});*/
+			});
       		document.getElementById("tartalom").innerHTML =
 			  this.responseText;
 			  list();
@@ -116,15 +101,3 @@ function updateKeszleten(id) {
 	xhttp.open("GET", "updateKeszleten.php" + updkesz_url, true);
 	xhttp.send();
 }
-
-// REGIST MODAL
-/*$(document).ready(function(){
-	$('#errorModal').modal('show');
-  });
-  $(document).ready(function(){
-	$('#successModal').modal('show');
-  });
-  
-  $(document).ready(function(){
-	$('#modal').modal('hide');
-  });*/
