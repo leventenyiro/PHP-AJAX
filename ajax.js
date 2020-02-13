@@ -47,7 +47,7 @@ function torles(id) {
   	xhttp.send();
 }
 
-function adatok(id) {
+/*function adatok(id) {
 	adatok_url = ""
 	adatok_url += "?input_id=" + id;
 
@@ -60,7 +60,7 @@ function adatok(id) {
 	};
 	xhttp.open("GET", "adatok.php" + upd_url, true);
 	xhttp.send();
-}
+}*/
 
 function updateForm(id) {
 	updateForm_url = "";

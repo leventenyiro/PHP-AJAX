@@ -137,10 +137,10 @@ class Adatbazis{
         $this->conn->query($this->sql);
     }
 
-    public function adatok($id) {
+    /*public function adatok($id) {
         $this->sql = "SELECT * FROM raktar WHERE id=".$id;
         $this->conn->query($this->sql);
-    }
+    }*/
 
     public function update() {
         if ($_GET["input_nev"] == "" || $_GET["input_ar"] == "") { ?>
