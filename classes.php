@@ -18,11 +18,8 @@ class Adatbazis{
 	public $sql = NULL;
 	public $result = NULL;
 	public $row = NULL;
-	
-	public function __construct() { self::kapcsolodas(); }
-	public function __destruct() { self::kapcsolatbontas(); }
     
-  public function kapcsolodas() {
+  public function __construct() {
 		$this->conn = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
 		if ($this->conn->connect_error) {
 			die ("Connection failed: " . $this->conn->connect_error);
@@ -138,10 +135,11 @@ class Adatbazis{
     
   public function updateKeszleten() {
     $this->sql = "UPDATE raktar SET keszleten = ".$_GET["input_keszleten"]." WHERE id = ".$_GET["input_id"];
+    echo $this->sql;
     $this->conn->query($this->sql);
   }
     
-	public function kapcsolatbontas() {
+	public function __destruct() {
 		$this->conn->close();	
 	}
 } ?>	
