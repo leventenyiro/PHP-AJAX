@@ -89,7 +89,7 @@ class Adatbazis{
 	public function list() {
     $this->sql = "SELECT * FROM raktar";
 		$this->result = $this->conn->query($this->sql); ?>
-      <table class="table table-hover">
+      <table class="table table-hover table-striped">
       <tr>
         <th>Név</th>
         <th>Ár</th>
