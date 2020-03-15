@@ -99,8 +99,8 @@ class Adatbazis{
         <tr>
           <td><?php echo $this->row["nev"]; ?></td>
           <td><?php echo $this->row["ar"]; ?></td>
-          <td><div class="form-group" onchange="updateKeszleten(<?php echo $this->row['id']; ?>)">
-            <select class="form-control" id="input_list_keszleten"> <?php
+          <td><div class="form-group">
+            <select class="form-control" id="input_list_keszleten" onchange="updateKeszleten(<?php echo $this->row['id']; ?>)"> <?php
               if ($this->row["keszleten"] == 1) { ?>
                 <option value="1" selected>Igen</option>
                 <option value="0">Nem</option> <?php
@@ -128,14 +128,13 @@ class Adatbazis{
       <p>Valami nincs kitöltve!</p>
       <?php
     } else {
-      $this->sql = "UPDATE raktar SET nev='".$_GET["input_nev"]."', ar=".$_GET["input_ar"].", keszleten=".$_GET["input_keszleten"]." WHERE id = ".$_GET["input_id"];
+      $this->sql = "UPDATE raktar SET nev = '".$_GET["input_nev"]."', ar = ".$_GET["input_ar"].", keszleten = ".$_GET["input_keszleten"]." WHERE id = ".$_GET["input_id"];
       $this->conn->query($this->sql);
     }
   }
     
   public function updateKeszleten() {
     $this->sql = "UPDATE raktar SET keszleten = ".$_GET["input_keszleten"]." WHERE id = ".$_GET["input_id"];
-    echo $this->sql;
     $this->conn->query($this->sql);
   }
     
